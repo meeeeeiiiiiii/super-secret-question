@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Box Opening</title>
+  <style>
+#box {
+  width: 500px;
+  height: 300px;
+  background-color: #fffff;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#box-cover {
+  width: 100%;
+  height: 100%;
+  background-image: url('box_cover.jpg');
+  object-fit: cover; /* Use object-fit: cover to fill the box while maintaining aspect ratio */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#box-content {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  line-height: 300px;
+  color: #000;
+}
+
+#box:hover #box-cover {
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+}
+
+#box:hover #box-content {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div id="box-cover">
+  <img src="box_cover.png" alt="Box Cover Image">
+</div>
+    <div id="box-content">
+  <a href="proposal.html"><img src="content.jpg" alt="Click to open another page"></a>
+</div>
+</body>
+</html>
